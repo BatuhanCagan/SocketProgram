@@ -17,16 +17,13 @@ public class SocketServer {
         try {
              serverSocket = new ServerSocket(6013);
         } catch (Exception e) {
-             System.out.println("Port Hatasý!");
+             System.out.println("Port Hatasï¿½!");
         }
-        System.out.println("SERVER BAÞLANTI ÝÇÝN HAZIR...");
-      //* Baðlantý saðlamadan program bir alt satýrdaki kod parçasýna geçmez (accept) *//
+        System.out.println("SERVER BAï¿½LANTI ï¿½ï¿½ï¿½N HAZIR...");
         clientSocket = serverSocket.accept();
 
-        //* Client'a veri gönderimi için kullandýðýmýz PrintWriter nesnesi oluþturulur *//
         PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
 
-        //* Client'dan gelen verileri tutan BufferedReader nesnesi oluþturulur *//
         BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
 
         while((clientGelen = in.readLine()) != null) {
